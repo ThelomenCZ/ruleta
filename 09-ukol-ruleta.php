@@ -10,22 +10,15 @@ if (array_key_exists("submit-ruleta",$_POST)) {
     $vsazeno = $_POST["sazka"];
     $vybrano = $_POST["vyber"];
     $vseOK = true;
- 
 
         if ($vsazeno <= 0) {
             $vseOK = false;
         }
-
         if ($vybrano == "a") {
             $vseOK = false;
         }
     }
 ?>
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,9 +32,7 @@ if (array_key_exists("submit-ruleta",$_POST)) {
     <h1>ruleta</h1>
 
     <?php
-
     
-
     if (array_key_exists("konto",$_SESSION)) {
         
             if (isset($vseOK) && $vseOK == true) {
@@ -54,27 +45,16 @@ if (array_key_exists("submit-ruleta",$_POST)) {
                         
                     } else {
                         echo "<h2>Prohra :(<h2>";
-                        $_SESSION["konto"] = $_SESSION["konto"] - $vsazeno;
-                        
+                        $_SESSION["konto"] = $_SESSION["konto"] - $vsazeno;  
                     }
             }
-
     }
     
-
-
-
-
-
-
     echo "<br>";
 
     echo "<strong> Stav konta : {$_SESSION["konto"]} Kč</strong>";
     
     ?>
-
-    
-    
 
     <form action="" method="post">
 
@@ -92,18 +72,6 @@ if (array_key_exists("submit-ruleta",$_POST)) {
         <input type="submit" name="submit-ruleta" value="Zatočit ruletou">
 
     </form>
-
-
-    <?php
-    
-    
-    
-    ?>
-
-
-
-
-
 
 </body>
 </html>
